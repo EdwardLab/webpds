@@ -1,51 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>File Download</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <title>File Download</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            padding: 40px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .donate-link {
-            margin-top: 20px;
-        }
-
-        .donate-link img {
-            width: 100px;
-        }
-
-        .footer-text {
-            text-align: center;
-            font-size: 14px;
-            color: #6c757d;
-            margin-top: 50px;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7fafc;
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1 class="mb-4">DigitalPlat Non-profit Public Download Server</h1>
-        <form action="/download" method="GET">
+<body class="flex items-center justify-center min-h-screen">
+    <div class="container mx-auto max-w-lg bg-white p-8 rounded-lg shadow-md">
+        <h1 class="text-3xl font-bold mb-6 text-center text-gray-800">DigitalPlat Non-profit Public Download Server</h1>
+        <form action="/download" method="GET" class="space-y-6">
             <div class="form-group">
-                <label for="filename">Enter filename:</label>
-                <input type="text" class="form-control" id="filename" name="filename" required>
+                <label for="filename" class="block text-sm font-medium text-gray-700">Enter filename:</label>
+                <input type="text" class="mt-1 block w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" id="filename" name="filename" required>
             </div>
-            <button type="submit" class="btn btn-primary">Download</button>
+            <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-200"><i class="fas fa-download"></i> Download</button>
         </form>
-        <div class="donate-link">
-            <h5>Donate to our foundation DigitalPlat, a 501(c)(3) organization (EIN: 81-2908499)</h5>
-            <p><a href="https://bank.hackclub.com/donations/start/digitalplat" target="_blank">Donate link (Stripe)</a></p>
-            <p><a href="https://digitalplat.org" target="_blank">DigitalPlat Homepage</a></p>
-            <img src="https://bank.hackclub.com/brand/hcb-logo-original-light.svg" alt="Hack Club Logo">
+        <div class="donate-link mt-8 text-center">
+            <h5 class="text-lg font-semibold text-gray-800">Donate to our foundation DigitalPlat, a 501(c)(3) organization (EIN: 81-2908499)</h5>
+            <div class="mt-4 space-y-2">
+                <a href="https://bank.hackclub.com/donations/start/digitalplat" target="_blank" class="inline-block bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition duration-200"><i class="fas fa-donate"></i> Donate link (HCB Stripe)</a>
+                <a href="https://digitalplat.org" target="_blank" class="inline-block bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-200"><i class="fas fa-home"></i> DigitalPlat Homepage</a>
+            </div>
         </div>
-        <p class="footer-text">DigitalPlat is fiscally sponsored by Hack Foundation, a 501(c)(3) nonprofit. Our registered EIN is 81-2908499.</p>
+        <p class="footer-text mt-12 text-center text-sm text-gray-500">DigitalPlat is fiscally sponsored by Hack Foundation, a 501(c)(3) nonprofit. Our registered EIN is 81-2908499.</p>
     </div>
 </body>
 </html>
